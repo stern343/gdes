@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>One Page Scroll</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: grey;
+        }
+        .wrapper {
+            width: 1180px;
+            height: 4000px;
+            background-color: pink;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        nav {
+            width: 800px;
+            height: 100px;
+            background-color: plum;
+            color: skyblue;
+            margin: 0 auto;
+            padding-top: 50px;
+            text-align: center;
+        }
+
+        a:link {
+            text-decoration: none;
+            color: white;
+        }
+
+        a:visited {
+            text-decoration: none;
+            color: white;
+        }
+
+        a:hover {
+            text-decoration: none;
+            color: powderblue;
+            curser: hand;
+        }
+
+        a:active {
+            text-decoration: none;
+            color: darksalmon;
+        }
+
+        #section-01 {
+            width: 1180px;
+            height: 800px;
+            background-color: pink;
+            color: white;
+            text-align: center;
+        }
+        #section-02 {
+            width: 1180px;
+            height: 800px;
+            background-color: ghostwhite;
+            color: pink;
+            text-align: center;
+        }
+        #section-03 {
+            width: 1180px;
+            height: 800px;
+            background-color: pink;
+            color: white;
+            text-align: center;
+        }
+        #section-04 {
+            width: 1180px;
+            height: 800px;
+            background-color: ghostwhite;
+            color: pink;
+            text-align: center;
+        }
+        #section-05 {
+            width: 1180px;
+            height: 800px;
+            background-color: pink;
+            color: white;
+            text-align: center;
+        }
+
+        p {
+            display: inline;
+            padding-right: 20px;
+            font-family: sans-serif;
+            font-size: 18px;
+            font-weight: bold;
+
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <nav>
+        <a href="#section-01"><p id="nav-section-01">Section One</p></a>
+        <a href="#section-02"><p id="nav-section-02">Section Two</p></a>
+        <a href="#section-03"><p id="nav-section-03">Section Three</p></a>
+        <a href="#section-04"><p id="nav-section-04">Section Four</p></a>
+        <a href="#section-05"><p id="nav-section-05">Section Five</p></a>
+
+    </nav>
+
+        <div id="top"></div>
+
+    <div id="section-01"><p>Section One</p></div>
+    <div id="section-02"><p>Section Two</p></div>
+    <div id="section-03"><p>Section Three</p></div>
+    <div id="section-04"><p>Section Four</p></div>
+    <div id="section-05"><p>Section Five</p></div>
+
+    <footer><a href="#top">Back to top</a></footer>
+</div> <!--end of wrapper-->
+<script>
+    $(document).ready(function () {
+        // Add smooth scrolling to all links
+        $("a").on('click', function (event) {
+
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+
+                // Store hash
+                var hash = this.hash;
+
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 800, function () {
+
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+            } // End if
+        });
+    });
+</script>
+</body>
+</html>
